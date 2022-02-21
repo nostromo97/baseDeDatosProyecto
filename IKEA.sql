@@ -24,8 +24,6 @@ CREATE TABLE Trabajadores
      Tienda_ID       NUMBER (9)  NOT NULL 
     ) 
 ;
-DROP TABLE TRABAJADORES;
-ALTER TABLE Trabajadores ADD CONSTRAINT trabajadores_tienda FOREIGN KEY (Tienda_ID)REFERENCES Tienda(ID_Tienda);
 
 CREATE TABLE Recepcionista 
     ( 
@@ -33,7 +31,7 @@ CREATE TABLE Recepcionista
      telefono NUMBER (9)  NOT NULL 
     ) 
 ;
-ALTER TABLE Recepcionista ADD CONSTRAINT Recepcionista_Trabajador_fk FOREIGN KEY (id) REFERENCES Trabajadores(Trabajadores_ID);
+
 CREATE TABLE Carpinteros 
     ( 
      id NUMBER(8)PRIMARY KEY, 
@@ -41,14 +39,14 @@ CREATE TABLE Carpinteros
      id_maquina                   NUMBER (8)  NOT NULL 
     ) 
 ;
-ALTER TABLE Carpinteros ADD CONSTRAINT Carpinteros_Trabajador_fk FOREIGN KEY (id) REFERENCES Trabajadores(Trabajadores_ID);
+
 CREATE TABLE Directivos 
     ( 
     id NUMBER(8)PRIMARY KEY, 
      Informe                       VARCHAR2 (40) 
     ) 
 ;
-ALTER TABLE Directivos ADD CONSTRAINT Directivos_Trabajador_fk FOREIGN KEY (id) REFERENCES Trabajadores(Trabajadores_ID);
+
 CREATE TABLE Director_marketing 
     ( 
      id NUMBER(8)PRIMARY KEY, 
@@ -56,7 +54,7 @@ CREATE TABLE Director_marketing
      id_trabajador           VARCHAR2 (8)  NOT NULL 
     ) 
 ;
-ALTER TABLE Director_marketing ADD CONSTRAINT Dir_mark_Trabajador_fk FOREIGN KEY (id) REFERENCES Trabajadores(Trabajadores_ID);
+
 -----------------------------------------------------------
 CREATE TABLE Productos 
     ( 
@@ -69,8 +67,7 @@ CREATE TABLE Productos
      Linea_de_pedido_ID NUMBER (8)  NOT NULL 
     ) 
 ;
-DROP TABLE Productos;
-ALTER TABLE Productos ADD CONSTRAINT productos_linea_FK FOREIGN KEY (Linea_de_pedido_ID) REFERENCES Linea_de_pedido(id_pedido);
+
 ---------------------------------------------
 CREATE TABLE Departamento 
     ( 
@@ -80,7 +77,7 @@ CREATE TABLE Departamento
     ) 
 ;
 
-ALTER TABLE DEPARTAMENTO ADD CONSTRAINT departamento_producto_fk FOREIGN KEY (id_producto) REFERENCES Productos(id_producto);
+
 ---------------------------------------------
 CREATE TABLE Iluminacion 
     ( 
@@ -89,7 +86,6 @@ CREATE TABLE Iluminacion
      Smart         VARCHAR2 (20) 
     ) 
 ;
-ALTER TABLE Iluminacion ADD CONSTRAINT iluminacion_departamento_fk FOREIGN KEY (id_departamento) REFERENCES Departamento(id_departamento);
 CREATE TABLE Jardineria 
     ( 
      id_departamento NUMBER(8)PRIMARY KEY , 
@@ -97,7 +93,6 @@ CREATE TABLE Jardineria
      Plantas       VARCHAR2 (20) 
     ) 
 ;
-ALTER TABLE Jardineria ADD CONSTRAINT jardineria_departamento_fk FOREIGN KEY (id_departamento) REFERENCES Departamento(id_departamento);
 
 CREATE TABLE Muebles 
     ( 
@@ -106,7 +101,6 @@ CREATE TABLE Muebles
      Material      VARCHAR2 (20) 
     ) 
 ;
-ALTER TABLE Muebles ADD CONSTRAINT Muebles_departamento_fk FOREIGN KEY (id_departamento) REFERENCES Departamento(id_departamento);
 CREATE TABLE Bricolaje 
     ( 
      id_departamento NUMBER(8)PRIMARY KEY , 
@@ -114,7 +108,6 @@ CREATE TABLE Bricolaje
      Herramientas  VARCHAR2 (20) 
     ) 
 ;
-ALTER TABLE Bricolaje ADD CONSTRAINT Bricolaje_departamento_fk FOREIGN KEY (id_departamento) REFERENCES Departamento(id_departamento);
 ----------------------------------------------
 CREATE TABLE Venden 
     ( 
@@ -122,8 +115,7 @@ CREATE TABLE Venden
         id_producto NUMBER (8) NOT NULL
     ) 
 ;
-ALTER TABLE VENDEN ADD CONSTRAINT venden_tienda_fk FOREIGN KEY (ID_Tienda) REFERENCES Tienda(ID_Tienda) ON DELETE CASCADE;
-ALTER TABLE VENDEN ADD CONSTRAINT venden_productos_fk FOREIGN KEY (id_producto) REFERENCES Productos(id_producto)ON DELETE CASCADE;
+
 
 CREATE TABLE Linea_de_pedido 
     ( 
@@ -141,7 +133,6 @@ CREATE TABLE Pedidos
     
     ) 
 ;
-ALTER TABLE Pedidos ADD CONSTRAINT Pedidos_linea_fk FOREIGN KEY (Linea_de_pedido_ID ) REFERENCES Linea_de_pedido(id_pedido);
 CREATE TABLE Cliente 
     ( 
      DNI       VARCHAR2 (9)  PRIMARY KEY , 
@@ -159,6 +150,20 @@ CREATE TABLE Tarjeta
      Cliente_DNI   VARCHAR2 (9)  NOT NULL 
     ) 
 ;
+ALTER TABLE Trabajadores ADD CONSTRAINT trabajadores_tienda FOREIGN KEY (Tienda_ID)REFERENCES Tienda(ID_Tienda)ON DELETE CASCADE;
+ALTER TABLE Recepcionista ADD CONSTRAINT Recepcionista_Trabajador_fk FOREIGN KEY (id) REFERENCES Trabajadores(Trabajadores_ID)ON DELETE CASCADE;
+ALTER TABLE Carpinteros ADD CONSTRAINT Carpinteros_Trabajador_fk FOREIGN KEY (id) REFERENCES Trabajadores(Trabajadores_ID)ON DELETE CASCADE;
+ALTER TABLE Directivos ADD CONSTRAINT Directivos_Trabajador_fk FOREIGN KEY (id) REFERENCES Trabajadores(Trabajadores_ID)ON DELETE CASCADE;
+ALTER TABLE Director_marketing ADD CONSTRAINT Dir_mark_Trabajador_fk FOREIGN KEY (id) REFERENCES Trabajadores(Trabajadores_ID)ON DELETE CASCADE;
+ALTER TABLE Productos ADD CONSTRAINT productos_linea_FK FOREIGN KEY (Linea_de_pedido_ID) REFERENCES Linea_de_pedido(id_pedido)ON DELETE CASCADE;
+ALTER TABLE DEPARTAMENTO ADD CONSTRAINT departamento_producto_fk FOREIGN KEY (id_producto) REFERENCES Productos(id_producto)ON DELETE CASCADE;
+ALTER TABLE Iluminacion ADD CONSTRAINT iluminacion_departamento_fk FOREIGN KEY (id_departamento) REFERENCES Departamento(id_departamento)ON DELETE CASCADE;
+ALTER TABLE Jardineria ADD CONSTRAINT jardineria_departamento_fk FOREIGN KEY (id_departamento) REFERENCES Departamento(id_departamento)ON DELETE CASCADE;
+ALTER TABLE Muebles ADD CONSTRAINT Muebles_departamento_fk FOREIGN KEY (id_departamento) REFERENCES Departamento(id_departamento)ON DELETE CASCADE;
+ALTER TABLE Bricolaje ADD CONSTRAINT Bricolaje_departamento_fk FOREIGN KEY (id_departamento) REFERENCES Departamento(id_departamento)ON DELETE CASCADE;
+ALTER TABLE VENDEN ADD CONSTRAINT venden_tienda_fk FOREIGN KEY (ID_Tienda) REFERENCES Tienda(ID_Tienda) ON DELETE CASCADE;
+ALTER TABLE VENDEN ADD CONSTRAINT venden_productos_fk FOREIGN KEY (id_producto) REFERENCES Productos(id_producto)ON DELETE CASCADE;
 
-ALTER TABLE Tarjeta ADD CONSTRAINT Tarjeta_cliente_FK FOREIGN KEY ( nº_de_cliente) REFERENCES Cliente( Nº_cliente);
-ALTER TABLE Tarjeta ADD CONSTRAINT Tarjeta_DNIcliente_FK FOREIGN KEY (Cliente_DNI) REFERENCES Cliente( DNI);
+ALTER TABLE Pedidos ADD CONSTRAINT Pedidos_linea_fk FOREIGN KEY (Linea_de_pedido_ID ) REFERENCES Linea_de_pedido(id_pedido)ON DELETE CASCADE;
+ALTER TABLE Tarjeta ADD CONSTRAINT Tarjeta_cliente_FK FOREIGN KEY ( nº_de_cliente) REFERENCES Cliente( Nº_cliente)ON DELETE CASCADE;
+ALTER TABLE Tarjeta ADD CONSTRAINT Tarjeta_DNIcliente_FK FOREIGN KEY (Cliente_DNI) REFERENCES Cliente( DNI)ON DELETE CASCADE;
