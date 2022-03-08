@@ -163,7 +163,17 @@ ALTER TABLE Muebles ADD CONSTRAINT Muebles_departamento_fk FOREIGN KEY (id_depar
 ALTER TABLE Bricolaje ADD CONSTRAINT Bricolaje_departamento_fk FOREIGN KEY (id_departamento) REFERENCES Departamento(id_departamento)ON DELETE CASCADE;
 ALTER TABLE VENDEN ADD CONSTRAINT venden_tienda_fk FOREIGN KEY (ID_Tienda) REFERENCES Tienda(ID_Tienda) ON DELETE CASCADE;
 ALTER TABLE VENDEN ADD CONSTRAINT venden_productos_fk FOREIGN KEY (id_producto) REFERENCES Productos(id_producto)ON DELETE CASCADE;
-
 ALTER TABLE Pedidos ADD CONSTRAINT Pedidos_linea_fk FOREIGN KEY (Linea_de_pedido_ID ) REFERENCES Linea_de_pedido(id_pedido)ON DELETE CASCADE;
 ALTER TABLE Tarjeta ADD CONSTRAINT Tarjeta_cliente_FK FOREIGN KEY ( nº_de_cliente) REFERENCES Cliente( Nº_cliente)ON DELETE CASCADE;
 ALTER TABLE Tarjeta ADD CONSTRAINT Tarjeta_DNIcliente_FK FOREIGN KEY (Cliente_DNI) REFERENCES Cliente( DNI)ON DELETE CASCADE;
+--RESTRICCIONES
+ALTER TABLE TRABAJADORES ADD CONSTRAINT DNI_POSIBLE CHECK(LENGTH(DNI)>=9);
+ALTER TABLE CLIENTE ADD CONSTRAINT DNI_POSIBLE2 CHECK(LENGTH(DNI)>=9);
+ALTER TABLE Tienda ADD CONSTRAINT CIUDAD_POSIBLE CHECK (Ciudad IN ('Malaga','Sevilla','Madrid','Barcelona'));
+ALTER TABLE productos ADD CONSTRAINT Precio_Posible CHECK(Precio>0);
+ALTER TABLE Muebles ADD CONSTRAINT material_POSIBLE CHECK (material IN ('Madera','Contrachapado','Aluminio','Reciclado'));
+ALTER TABLE REcepcionista ADD CONSTRAINT Telefono_posible CHECK(LENGTH(telefono)=9);
+ALTER TABLE Trabajadores ADD CONSTRAINT Sueldo_Posible CHECK(sueldo>400);
+ALTER TABLE JArdineria ADD CONSTRAINT macetas_POSIBLE CHECK (macetas IN ('Pequeña','Mediana','Grande'));
+ALTER TABLE Iluminacion ADD CONSTRAINT Lamparas_POSIBLE CHECK (Lamparas IN ('Led','Bajo consumo','Alto consumo'));
+ALTER TABLE Bricolaje ADD CONSTRAINT herramientas_POSIBLE CHECK (Herramientas IN ('Taladro','Martillo','Destornillador','Sierra'));
