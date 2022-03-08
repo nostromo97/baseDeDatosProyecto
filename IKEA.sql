@@ -181,6 +181,13 @@ ALTER TABLE Trabajadores ADD CONSTRAINT tipo_valido CHECK( tipo IN('Carpintero',
 INSERT INTO Tienda VALUES(1,'Malaga','Calle 13',200,'Mañana');
 INSERT INTO Tienda VALUES(2,'Sevilla','Calle 19 nº6',700,'Tarde');
 INSERT INTO Tienda VALUES(3,'Barcelona','Calle 25 nº2',1000,'Mañana');
+INSERT INTO Tienda VALUES(4,'Madrid','Calle 20 nº14',950,'Tarde');
+INSERT INTO Tienda VALUES(5,'Murcia','Calle 15 nº20',1000,'Mañana');
+INSERT INTO Tienda VALUES(6,'Valencia','Calle 10 nº7',690,'Tarde');
+INSERT INTO Tienda VALUES(7,'Marbella','Calle 22 nº9',970,'Mañana');
+INSERT INTO Tienda VALUES(8,'Pamplona','Calle 3 nº34',699,'Tarde');
+INSERT INTO Tienda VALUES(9,'Pontevedra','Calle 1 nº78',2000,'Mañana');
+INSERT INTO Tienda VALUES(10,'Cádiz','Calle 2 nº6',1000,'Mañana');
 INSERT INTO Trabajadores VALUES(11,'Antonio','Rodriguez','1234578T',123456789,1200,'Calle Bolivia','Carpintero',1);
 INSERT INTO Trabajadores VALUES(22,'Juan','Ortega','33452169G',666666666,1150,'Calle Andorra','Recepcionista',2);
 INSERT INTO Trabajadores VALUES(33,'Emilio','Perez','44444444F',999999999,975,'Calle Brasil','Director',1);
@@ -189,3 +196,6 @@ INSERT INTO Trabajadores VALUES(55,'Francisco','Marquez','67898765E',999999999,2
 INSERT INTO Trabajadores VALUES(66,'Salva','Navarro','45663698K',987987987,1750,'Calle Duki','Carpintero',2);
 INSERT INTO Trabajadores VALUES(77,'Mario','Gonzalez','12332112W',123456365,1235,'Pura calle','Director',1);
 INSERT INTO Trabajadores VALUES(88,'Gonzalo','Corrales','12333339J',120200123,1200,'Hospitalet','Recepcionista',3);
+INSERT INTO Trabajadores VALUES(99,'Agustín','Arcos','11323439Z',120255523,1000,'Calle 123','Carpintero',3);
+INSERT INTO Trabajadores VALUES(12,'Roberto','Ríos','13223567S',120275123,2000,'Calle 333','Director',4);
+
