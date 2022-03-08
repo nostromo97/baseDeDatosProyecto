@@ -60,7 +60,7 @@ CREATE TABLE Productos
     ( 
     id_producto NUMBER (8) PRIMARY KEY,
      Tipo               VARCHAR2 (12)  NOT NULL , 
-     Precio             NUMBER (5,2)  NOT NULL , 
+     Precio             NUMBER (4)  NOT NULL , 
      Descripción        VARCHAR2 (20)  NOT NULL , 
      Cantidad           NUMBER (9)  NOT NULL , 
      id_Departamento    NUMBEr(8)  NOT NULL , 
@@ -167,8 +167,7 @@ ALTER TABLE Pedidos ADD CONSTRAINT Pedidos_linea_fk FOREIGN KEY (Linea_de_pedido
 ALTER TABLE Tarjeta ADD CONSTRAINT Tarjeta_cliente_FK FOREIGN KEY ( nº_de_cliente) REFERENCES Cliente( Nº_cliente)ON DELETE CASCADE;
 ALTER TABLE Tarjeta ADD CONSTRAINT Tarjeta_DNIcliente_FK FOREIGN KEY (Cliente_DNI) REFERENCES Cliente( DNI)ON DELETE CASCADE;
 --RESTRICCIONES
-ALTER TABLE TRABAJADORES ADD CONSTRAINT DNI_POSIBLE CHECK(LENGTH(DNI)>=9);
-ALTER TABLE CLIENTE ADD CONSTRAINT DNI_POSIBLE2 CHECK(LENGTH(DNI)>=9);
+
 ALTER TABLE Tienda ADD CONSTRAINT CIUDAD_POSIBLE CHECK (Ciudad IN ('Malaga','Sevilla','Madrid','Barcelona'));
 ALTER TABLE productos ADD CONSTRAINT Precio_Posible CHECK(Precio>0);
 ALTER TABLE Muebles ADD CONSTRAINT material_POSIBLE CHECK (material IN ('Madera','Contrachapado','Aluminio','Reciclado'));
@@ -177,3 +176,16 @@ ALTER TABLE Trabajadores ADD CONSTRAINT Sueldo_Posible CHECK(sueldo>400);
 ALTER TABLE JArdineria ADD CONSTRAINT macetas_POSIBLE CHECK (macetas IN ('Pequeña','Mediana','Grande'));
 ALTER TABLE Iluminacion ADD CONSTRAINT Lamparas_POSIBLE CHECK (Lamparas IN ('Led','Bajo consumo','Alto consumo'));
 ALTER TABLE Bricolaje ADD CONSTRAINT herramientas_POSIBLE CHECK (Herramientas IN ('Taladro','Martillo','Destornillador','Sierra'));
+ALTER TABLE Trabajadores ADD CONSTRAINT tipo_valido CHECK( tipo IN('Carpintero','Director','Recepcionista','Directivo'));
+--INSERTAR Registros
+INSERT INTO Tienda VALUES(1,'Malaga','Calle 13',200,'Mañana');
+INSERT INTO Tienda VALUES(2,'Sevilla','Calle 19 nº6',700,'Tarde');
+INSERT INTO Tienda VALUES(3,'Barcelona','Calle 25 nº2',1000,'Mañana');
+INSERT INTO Trabajadores VALUES(11,'Antonio','Rodriguez','1234578T',123456789,1200,'Calle Bolivia','Carpintero',1);
+INSERT INTO Trabajadores VALUES(22,'Juan','Ortega','33452169G',666666666,1150,'Calle Andorra','Recepcionista',2);
+INSERT INTO Trabajadores VALUES(33,'Emilio','Perez','44444444F',999999999,975,'Calle Brasil','Director',1);
+INSERT INTO Trabajadores VALUES(44,'Andres','Cabeza','5555555Q',112343215,1000,'Calle Gongora','Director',3);
+INSERT INTO Trabajadores VALUES(55,'Francisco','Marquez','67898765E',999999999,2000,'Calle Quevedo','Directivo',3);
+INSERT INTO Trabajadores VALUES(66,'Salva','Navarro','45663698K',987987987,1750,'Calle Duki','Carpintero',2);
+INSERT INTO Trabajadores VALUES(77,'Mario','Gonzalez','12332112W',123456365,1235,'Pura calle','Director',1);
+INSERT INTO Trabajadores VALUES(88,'Gonzalo','Corrales','12333339J',120200123,1200,'Hospitalet','Recepcionista',3);
