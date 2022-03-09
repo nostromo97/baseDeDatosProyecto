@@ -58,7 +58,7 @@ CREATE TABLE Director_marketing
 -----------------------------------------------------------
 CREATE TABLE Productos 
     ( 
-    id_producto NUMBER (8) PRIMARY KEY,
+     id_producto NUMBER (8) PRIMARY KEY,
      Tipo               VARCHAR2 (12)  NOT NULL , 
      Precio             NUMBER (4)  NOT NULL , 
      Descripción        VARCHAR2 (20)  NOT NULL , 
@@ -184,23 +184,24 @@ INSERT INTO Tienda VALUES(2,'Sevilla','Calle 19 nº6',700,'Tarde');
 INSERT INTO Tienda VALUES(3,'Barcelona','Calle 25 nº2',1000,'Mañana');
 INSERT INTO Tienda VALUES(4,'Madrid','Calle 20 nº14',950,'Tarde');
 --TRABAJADORES
-INSERT INTO Trabajadores VALUES(11,'Antonio','Rodriguez','1234578T',123456789,1200,'Calle Bolivia','Carpintero',1);
-INSERT INTO Trabajadores VALUES(22,'Juan','Ortega','33452169G',666666666,1150,'Calle Andorra','Recepcionista',2);
-INSERT INTO Trabajadores VALUES(33,'Emilio','Perez','44444444F',999999999,975,'Calle Brasil','Directivo',1);
-INSERT INTO Trabajadores VALUES(44,'Andres','Cabeza','5555555Q',112343215,1000,'Calle Gongora','Director_marketing',3);
-INSERT INTO Trabajadores VALUES(55,'Francisco','Marquez','67898765E',999999999,2000,'Calle Quevedo','Directivo',3);
-INSERT INTO Trabajadores VALUES(66,'Salva','Navarro','45663698K',987987987,1750,'Calle Duki','Carpintero',2);
-INSERT INTO Trabajadores VALUES(77,'Mario','Gonzalez','12332112W',123456365,1235,'Pura calle','Director_marketing',1);
-INSERT INTO Trabajadores VALUES(88,'Gonzalo','Corrales','12333339J',120200123,1200,'Hospitalet','Recepcionista',3);
-INSERT INTO Trabajadores VALUES(99,'Agustín','Arcos','11323439Z',120255523,1000,'Calle 123','Carpintero',3);
-INSERT INTO Trabajadores VALUES(12,'Roberto','Ríos','13223567S',120275123,2000,'Calle 333','Directivo',4);
-INSERT INTO Trabajadores VALUES(13,'Álvaro','Fernández','13288867D',122242123,1000,'Calle 2323','Recepcionista',1);
-INSERT INTO Trabajadores VALUES(1,'Adrián','Rojas','33243527A',121325123,1000,'Calle 1543','Recepcionista',1);
-INSERT INTO Trabajadores VALUES(11,'Agustín','Arcos','65789934X',123456111,1200,'Calle Stephen','Carpintero',1);
-INSERT INTO Trabajadores VALUES(13,'Antonio','Resines','65789999F',123477711,2200,'Calle 4765','Director_marketing',1);
-INSERT INTO Trabajadores VALUES(14,'Fox','Mulder','65789324G',123888811,2200,'Calle 8989','Director_marketing',2);
-INSERT INTO Trabajadores VALUES(15,'Benito','Camela','8675645R',127564811,2200,'Calle 1111','Directivo',2);
+INSERT INTO Trabajadores VALUES(11,'Antonio','Rodriguez','1234578T',12356789,1200,'Calle Bolivia','Carpintero',1);
+INSERT INTO Trabajadores VALUES(33,'Emilio','Perez','44444444F',99999999,975,'Calle Brasil','Directivo',1);
+INSERT INTO Trabajadores VALUES(77,'Mario','Gonzalez','12332112W',12346365,1235,'Pura calle','Director_marketing',1);
+INSERT INTO Trabajadores VALUES(13,'Álvaro','Fernández','13288867D',12242123,1000,'Calle 2323','Recepcionista',1);
+INSERT INTO Trabajadores VALUES(1,'Adrián','Rojas','33243527A',12135123,1000,'Calle 1543','Recepcionista',1);
+INSERT INTO Trabajadores VALUES(11,'Agustín','Arcos','65789934X',12345111,1200,'Calle Stephen','Carpintero',1);
+INSERT INTO Trabajadores VALUES(13,'Antonio','Resines','65789999F',12377711,2200,'Calle 4765','Director_marketing',1);
+INSERT INTO Trabajadores VALUES(22,'Juan','Ortega','33452169G',66666666,1150,'Calle Andorra','Recepcionista',2);
+INSERT INTO Trabajadores VALUES(66,'Salva','Navarro','45663698K',98787987,1750,'Calle Duki','Carpintero',2);
+INSERT INTO Trabajadores VALUES(14,'Fox','Mulder','65789324G',12388811,2200,'Calle 8989','Director_marketing',2);
+INSERT INTO Trabajadores VALUES(15,'Benito','Camela','8675645R',12756411,2200,'Calle 1111','Directivo',2);
+INSERT INTO Trabajadores VALUES(44,'Andres','Cabeza','5555555Q',11234315,1000,'Calle Gongora','Director_marketing',3);
+INSERT INTO Trabajadores VALUES(55,'Francisco','Marquez','67898765E',99999999,2000,'Calle Quevedo','Directivo',3);
+INSERT INTO Trabajadores VALUES(88,'Gonzalo','Corrales','12333339J',12020123,1200,'Hospitalet','Recepcionista',3);
+INSERT INTO Trabajadores VALUES(99,'Agustín','Arcos','11323439Z',12025523,1000,'Calle 123','Carpintero',3);
+INSERT INTO Trabajadores VALUES(12,'Roberto','Ríos','13223567S',12027513,2000,'Calle 333','Directivo',4);
 --PRODUCTOS 
-
+INSERT INTO Productos VALUES(1122,'Iluminación',235,'Foco para eventos audiovisuales',700,1,111);
+INSERT INTO Productos VALUES(2233,'Jardinería',50,'Tijeras podadoras',250,2,2222);
 
 
