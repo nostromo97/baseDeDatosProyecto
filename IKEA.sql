@@ -94,7 +94,7 @@ CREATE TABLE Jardineria
     ) 
 ;
 
-CREATE TABLE Mueble 
+CREATE TABLE Muebles 
     ( 
      id_departamento NUMBER(8)PRIMARY KEY  , 
      Tipo          VARCHAR2 (20) , 
@@ -177,17 +177,12 @@ ALTER TABLE JArdineria ADD CONSTRAINT macetas_POSIBLE CHECK (macetas IN ('Pequeñ
 ALTER TABLE Iluminacion ADD CONSTRAINT Lamparas_POSIBLE CHECK (Lamparas IN ('Led','Bajo consumo','Alto consumo'));
 ALTER TABLE Bricolaje ADD CONSTRAINT herramientas_POSIBLE CHECK (Herramientas IN ('Taladro','Martillo','Destornillador','Sierra'));
 ALTER TABLE Trabajadores ADD CONSTRAINT tipo_valido CHECK( tipo IN('Carpintero','Director_marketing','Recepcionista','Directivo'));
+ALTER TABLE Productos ADD CONSTRAINT producto_valido CHECK( tipo IN('Iluminación','Jardinería','Mueble','Bricolaje'));
 --INSERTAR registro TIENDA
 INSERT INTO Tienda VALUES(1,'Malaga','Calle 13',200,'Mañana');
 INSERT INTO Tienda VALUES(2,'Sevilla','Calle 19 nº6',700,'Tarde');
 INSERT INTO Tienda VALUES(3,'Barcelona','Calle 25 nº2',1000,'Mañana');
 INSERT INTO Tienda VALUES(4,'Madrid','Calle 20 nº14',950,'Tarde');
-INSERT INTO Tienda VALUES(5,'Murcia','Calle 15 nº20',1000,'Mañana');
-INSERT INTO Tienda VALUES(6,'Valencia','Calle 10 nº7',690,'Tarde');
-INSERT INTO Tienda VALUES(7,'Marbella','Calle 22 nº9',970,'Mañana');
-INSERT INTO Tienda VALUES(8,'Pamplona','Calle 3 nº34',699,'Tarde');
-INSERT INTO Tienda VALUES(9,'Pontevedra','Calle 1 nº78',2000,'Mañana');
-INSERT INTO Tienda VALUES(10,'Cádiz','Calle 2 nº6',1000,'Mañana');
 --TRABAJADORES
 INSERT INTO Trabajadores VALUES(11,'Antonio','Rodriguez','1234578T',123456789,1200,'Calle Bolivia','Carpintero',1);
 INSERT INTO Trabajadores VALUES(22,'Juan','Ortega','33452169G',666666666,1150,'Calle Andorra','Recepcionista',2);
@@ -205,7 +200,7 @@ INSERT INTO Trabajadores VALUES(11,'Agustín','Arcos','65789934X',123456111,1200,
 INSERT INTO Trabajadores VALUES(13,'Antonio','Resines','65789999F',123477711,2200,'Calle 4765','Director_marketing',1);
 INSERT INTO Trabajadores VALUES(14,'Fox','Mulder','65789324G',123888811,2200,'Calle 8989','Director_marketing',2);
 INSERT INTO Trabajadores VALUES(15,'Benito','Camela','8675645R',127564811,2200,'Calle 1111','Directivo',2);
---PRODUCTOS
+--PRODUCTOS 
 
 
 
