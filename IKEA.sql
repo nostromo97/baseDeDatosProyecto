@@ -136,9 +136,9 @@ CREATE TABLE Pedidos
 CREATE TABLE Cliente 
     ( 
      DNI       VARCHAR2 (9)  PRIMARY KEY , 
-     Nombre    VARCHAR2 (9)  NOT NULL , 
-     Apellidos VARCHAR2 (9)  NOT NULL , 
-     Dirección VARCHAR2 (9)  NOT NULL ,
+     Nombre    VARCHAR2 (20)  NOT NULL , 
+     Apellidos VARCHAR2 (20)  NOT NULL , 
+     Dirección VARCHAR2 (30)  NOT NULL ,
      Nº_cliente NUMBER(8)UNIQUE NOT NULL
     ) 
 ;
@@ -202,8 +202,25 @@ INSERT INTO Trabajadores VALUES(88,'Gonzalo','Corrales','12333339J',12020123,120
 INSERT INTO Trabajadores VALUES(99,'Agustín','Arcos','11323439Z',12025523,1000,'Calle 123','Carpintero',3);
 INSERT INTO Trabajadores VALUES(69,'Roberto','Ríos','13223567S',12027513,2000,'Calle 333','Directivo',4);
 
+--CLIENTE 
+INSERT INTO CLIENTE VALUES('12345678B','Carlos','Boni','calle Argentina nº 10',10);
+INSERT INTO CLIENTE VALUES('45678954S','Juan','Alvarez','calle Venezuela nº 1',9);
+INSERT INTO CLIENTE VALUES('99999999F','Harry','Osborn','calle greenday nº 13',2);
+--TARJETA 
+INSERT INTO TARJETA VALUES(10,'12345678B');
+INSERT INTO TARJETA VALUES(9,'45678954S');
+INSERT INTO TARJETA VALUES(2,'99999999F');
+
 --PRODUCTOS 
 INSERT INTO Productos VALUES(1122,'Iluminación',235,'Foco para eventos audiovisuales',700,1,111);
 INSERT INTO Productos VALUES(2233,'Jardinería',50,'Tijeras podadoras',250,2,2222);
+
+
+
+
+
+
+
+
 
 
