@@ -188,7 +188,7 @@ INSERT INTO Tienda VALUES(4,'Madrid','Calle 20 nº14',950,'Tarde');
 INSERT INTO Trabajadores VALUES(11,'Antonio','Rodriguez','1234578T',12356789,1200,'Calle Bolivia','Carpintero',1);
 INSERT INTO Trabajadores VALUES(33,'Emilio','Perez','44444444F',99999999,975,'Calle Brasil','Directivo',1);
 INSERT INTO Trabajadores VALUES(77,'Mario','Gonzalez','12332112W',12346365,1235,'Pura calle','Director_marketing',1);
-INSERT INTO Trabajadores VALUES(13,'Álvaro','Fernández','13288867D',12242123,1000,'Calle 2323','Recepcionista',1);
+INSERT INTO Trabajadores VALUES(13,'Álvaro','Fernández','13288867D',C,1000,'Calle 2323','Recepcionista',1);
 INSERT INTO Trabajadores VALUES(19,'Adrián','Rojas','33243527A',12135123,1000,'Calle 1543','Recepcionista',1);
 INSERT INTO Trabajadores VALUES(12,'Agustín','Arcos','65789934X',12345111,1200,'Calle Stephen','Carpintero',1);
 INSERT INTO Trabajadores VALUES(17,'Antonio','Resines','65789999F',12377711,2200,'Calle 4765','Director_marketing',1);
@@ -216,6 +216,17 @@ INSERT INTO Productos VALUES(1,'Iluminación',235,'Foco para eventos audiovisuale
 INSERT INTO Productos VALUES(2,'Jardinería',50,'Tijeras podadoras',250,2,2);
 INSERT INTO Productos VALUES(3,'Mueble',99,'Escritorio 12 piezas',300,3,3);
 INSERT INTO Productos VALUES(4,'Bricolaje',60,'Sierra de cinta',400,4,4);
+
+--RECEPCIONISTA
+INSERT INTO Recepcionista VALUES (13,12242123);
+INSERT INTO Recepcionista VALUES(19,12135123);
+INSERT INTO Recepcionista VALUES(22,66666666);
+INSERT INTO Recepcionista VALUES(88,12020123);
+--CARPINTERO
+INSERT INTO Carpinteros VALUES(11,5900,1);
+INSERT INTO Carpinteros VALUES(12,5000,2);
+INSERT INTO Carpintero VALUES(66,3700,3);
+INSERT INTO Carpintero VALUES(99,4780,4);
 
 
 
