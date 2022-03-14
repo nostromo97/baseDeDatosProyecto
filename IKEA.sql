@@ -212,8 +212,10 @@ INSERT INTO TARJETA VALUES(9,'45678954S');
 INSERT INTO TARJETA VALUES(2,'99999999F');
 
 --PRODUCTOS 
-INSERT INTO Productos VALUES(1122,'Iluminación',235,'Foco para eventos audiovisuales',700,1,111);
-INSERT INTO Productos VALUES(2233,'Jardinería',50,'Tijeras podadoras',250,2,2222);
+INSERT INTO Productos VALUES(1,'Iluminación',235,'Foco para eventos audiovisuales',700,1,1);
+INSERT INTO Productos VALUES(2,'Jardinería',50,'Tijeras podadoras',250,2,2);
+INSERT INTO Productos VALUES(3,'Mueble',99,'Escritorio 12 piezas',300,3,3);
+INSERT INTO Productos VALUES(4,'Bricolaje',60,'Sierra de cinta',400,4,4);
 
 
 
