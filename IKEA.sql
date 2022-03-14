@@ -178,6 +178,7 @@ ALTER TABLE Iluminacion ADD CONSTRAINT Lamparas_POSIBLE CHECK (Lamparas IN ('Led
 ALTER TABLE Bricolaje ADD CONSTRAINT herramientas_POSIBLE CHECK (Herramientas IN ('Taladro','Martillo','Destornillador','Sierra'));
 ALTER TABLE Trabajadores ADD CONSTRAINT tipo_valido CHECK( tipo IN('Carpintero','Director_marketing','Recepcionista','Directivo'));
 ALTER TABLE Productos ADD CONSTRAINT producto_valido CHECK( tipo IN('Iluminación','Jardinería','Mueble','Bricolaje'));
+
 --INSERTAR registro TIENDA
 INSERT INTO Tienda VALUES(1,'Malaga','Calle 13',200,'Mañana');
 INSERT INTO Tienda VALUES(2,'Sevilla','Calle 19 nº6',700,'Tarde');
@@ -188,9 +189,9 @@ INSERT INTO Trabajadores VALUES(11,'Antonio','Rodriguez','1234578T',12356789,120
 INSERT INTO Trabajadores VALUES(33,'Emilio','Perez','44444444F',99999999,975,'Calle Brasil','Directivo',1);
 INSERT INTO Trabajadores VALUES(77,'Mario','Gonzalez','12332112W',12346365,1235,'Pura calle','Director_marketing',1);
 INSERT INTO Trabajadores VALUES(13,'Álvaro','Fernández','13288867D',12242123,1000,'Calle 2323','Recepcionista',1);
-INSERT INTO Trabajadores VALUES(1,'Adrián','Rojas','33243527A',12135123,1000,'Calle 1543','Recepcionista',1);
-INSERT INTO Trabajadores VALUES(11,'Agustín','Arcos','65789934X',12345111,1200,'Calle Stephen','Carpintero',1);
-INSERT INTO Trabajadores VALUES(13,'Antonio','Resines','65789999F',12377711,2200,'Calle 4765','Director_marketing',1);
+INSERT INTO Trabajadores VALUES(19,'Adrián','Rojas','33243527A',12135123,1000,'Calle 1543','Recepcionista',1);
+INSERT INTO Trabajadores VALUES(12,'Agustín','Arcos','65789934X',12345111,1200,'Calle Stephen','Carpintero',1);
+INSERT INTO Trabajadores VALUES(17,'Antonio','Resines','65789999F',12377711,2200,'Calle 4765','Director_marketing',1);
 INSERT INTO Trabajadores VALUES(22,'Juan','Ortega','33452169G',66666666,1150,'Calle Andorra','Recepcionista',2);
 INSERT INTO Trabajadores VALUES(66,'Salva','Navarro','45663698K',98787987,1750,'Calle Duki','Carpintero',2);
 INSERT INTO Trabajadores VALUES(14,'Fox','Mulder','65789324G',12388811,2200,'Calle 8989','Director_marketing',2);
@@ -199,7 +200,8 @@ INSERT INTO Trabajadores VALUES(44,'Andres','Cabeza','5555555Q',11234315,1000,'C
 INSERT INTO Trabajadores VALUES(55,'Francisco','Marquez','67898765E',99999999,2000,'Calle Quevedo','Directivo',3);
 INSERT INTO Trabajadores VALUES(88,'Gonzalo','Corrales','12333339J',12020123,1200,'Hospitalet','Recepcionista',3);
 INSERT INTO Trabajadores VALUES(99,'Agustín','Arcos','11323439Z',12025523,1000,'Calle 123','Carpintero',3);
-INSERT INTO Trabajadores VALUES(12,'Roberto','Ríos','13223567S',12027513,2000,'Calle 333','Directivo',4);
+INSERT INTO Trabajadores VALUES(69,'Roberto','Ríos','13223567S',12027513,2000,'Calle 333','Directivo',4);
+
 --PRODUCTOS 
 INSERT INTO Productos VALUES(1122,'Iluminación',235,'Foco para eventos audiovisuales',700,1,111);
 INSERT INTO Productos VALUES(2233,'Jardinería',50,'Tijeras podadoras',250,2,2222);
