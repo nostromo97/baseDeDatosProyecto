@@ -63,7 +63,7 @@ CREATE TABLE Productos
      Precio             NUMBER (4)  NOT NULL , 
      Descripción        VARCHAR2 (20)  NOT NULL , 
      Cantidad           NUMBER (9)  NOT NULL , 
-     id_Departamento    NUMBEr(8)  NOT NULL , 
+     id_Departamento    NUMBER(8)  NOT NULL , 
      Linea_de_pedido_ID NUMBER (8)  NOT NULL 
     ) 
 ;
@@ -237,9 +237,11 @@ INSERT INTO Director_marketing VALUES (77, 'control1');
 INSERT INTO Director_marketing VALUES (17, 'control1');
 INSERT INTO Director_marketing VALUES (14, 'control1');
 INSERT INTO Director_marketing VALUES (44, 'control1');
-
-
-
+--DEPARTAMENTO
+INSERT INTO Departamento VALUES (1,1);
+INSERT INTO Departamento VALUES (2,2);
+INSERT INTO Departamento VALUES (3,3);
+INSERT INTO Departamento VALUES (4,4);
 
 
 
