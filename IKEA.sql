@@ -50,8 +50,8 @@ CREATE TABLE Directivos
 CREATE TABLE Director_marketing 
     ( 
      id NUMBER(8)PRIMARY KEY, 
-     Control                 VARCHAR2 (20)  NOT NULL , 
-     id_trabajador           VARCHAR2 (8)  NOT NULL 
+     Control                 VARCHAR2 (20)  NOT NULL  
+     
     ) 
 ;
 
@@ -200,7 +200,7 @@ INSERT INTO Trabajadores VALUES(44,'Andres','Cabeza','5555555Q',11234315,1000,'C
 INSERT INTO Trabajadores VALUES(55,'Francisco','Marquez','67898765E',99999999,2000,'Calle Quevedo','Directivo',3);
 INSERT INTO Trabajadores VALUES(88,'Gonzalo','Corrales','12333339J',12020123,1200,'Hospitalet','Recepcionista',3);
 INSERT INTO Trabajadores VALUES(99,'Agustín','Arcos','11323439Z',12025523,1000,'Calle 123','Carpintero',3);
-INSERT INTO Trabajadores VALUES(69,'Roberto','Ríos','13223567S',12027513,2000,'Calle 333','Directivo',4);
+INSERT INTO Trabajadores VALUES(68,'Roberto','Ríos','13223567S',12027513,2000,'Calle 333','Directivo',4);
 
 --CLIENTE 
 INSERT INTO CLIENTE VALUES('12345678B','Carlos','Boni','calle Argentina nº 10',10);
@@ -227,6 +227,16 @@ INSERT INTO Carpinteros VALUES(11,5900,1);
 INSERT INTO Carpinteros VALUES(12,5000,2);
 INSERT INTO Carpintero VALUES(66,3700,3);
 INSERT INTO Carpintero VALUES(99,4780,4);
+--DIRECTIVO
+INSERT INTO Directivos VALUES (33,'INFORME 1');
+INSERT INTO Directivos VALUES(15, 'INFORME 1');
+INSERT INTO Directivos VALUES(55, 'INFORME 1');
+INSERT INTO Directivos VALUES (68, 'INFORME 1');
+--DIRECTOR_MARKETING
+INSERT INTO Director_marketing VALUES (77, 'control1');
+INSERT INTO Director_marketing VALUES (17, 'control1');
+INSERT INTO Director_marketing VALUES (14, 'control1');
+INSERT INTO Director_marketing VALUES (44, 'control1');
 
 
 
