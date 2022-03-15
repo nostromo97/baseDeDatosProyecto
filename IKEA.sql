@@ -250,12 +250,22 @@ INSERT INTO Iluminacion VALUES(1, 'LAMPARAS','SMART');
 INSERT  INTO Jardineria VALUES(2, 'MACETAS','PLANTAS');
 
 --MUEBLES
-INSERT INTO Muebles VALUES (3, 'TIPO','MATERIAL');
+INSERT INTO Muebles VALUES (3, 'TIPO','Madera');
 
 --BRICOLAJE
 INSERT INTO Bricolaje VALUES (4 , 'INERIOR','HERRAMIENTAS');
-
-
+--VENDEN
+INSERT INTO Venden VALUES(1,1);
+INSERT INTO Venden VALUES(2,2);
+INSERT INTO Venden VALUES (3,3);
+--LINEA DE PEDIDO
+INSERT INTO Linea_de_pedido VALUES(1,1,'Pedido de focos para evento');
+INSERT INTO Linea_de_pedido VALUES (2,2,'Pedido de tijeras podadoras');
+INSERT INTO Linea_de_pedido VALUES (3,3,'Pedido de escritorios de 12 piezas');
+--PEDIDOS
+INSERT INTO Pedidos VALUES (1,'YYYY-MM-DD',1,'76665434D');
+INSERT INTO Pedidos VALUES (2,'YYYY-MM-DD',2,'76665434D');
+INSERT INTO Pedidos VALUES (3,'YYYY-MM-DD',3,'77889767D');
 
 
 
