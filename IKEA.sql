@@ -266,7 +266,7 @@ INSERT INTO Linea_de_pedido VALUES (3,3,'Pedido de escritorios de 12 piezas');
 INSERT INTO Pedidos VALUES (1,'02/02/2022',1,'76665434D');
 INSERT INTO Pedidos VALUES (2,'30/05/2022',2,'76665434D');
 INSERT INTO Pedidos VALUES (3,'16/04/2022',3,'77889767D');
---
+--COSULTAS
 --SELECT1
 SELECT Nombre "Nombre de los Trabajores", Tipo "Tipo de trabajador" 
 FROM Trabajadores;
@@ -306,7 +306,14 @@ SELECT MAX(Nombre) FROM Trabajadores;
 SELECT MAX(Tipo) FROM Trabajadores;
 
 --SELECT7
-SELECT MIN(Nombre) FROM Cliente;
-SELECT MIN(Dirección) FROM Cliente;
+SELECT AVG(Sueldo) FROM Trabajadores;
+SELECT AVG(Superficie) FROM Tienda;
 
 --SELECT8
+SELECT 'El primer nombre es: '||MIN(Nombre) "Primer nombre"FROM Cliente;
+SELECT 'El sueldo mas bajo es: '||MIN(Sueldo)"Sueldo mas bajo"FROM trabajadores;
+
+--SELECT9
+
+SELECT 'La suma de los sueldos de lso trabajadores es: '||SUM(Sueldo)"Todos los sueldos" FROM trabajadores;
+SELECT 'La suma de la superficie de las tiendas es: '||SUM(superficie)"Suma de superficies" FROM Tienda;
