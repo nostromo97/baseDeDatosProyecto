@@ -279,3 +279,11 @@ FROM Cliente;
 --SELECT2
 SELECT Tipo ||' '|| Descripción FROM Productos;
 SELECT id_pedido ||' '|| Entrega FROM Pedidos;
+SELECT Tipo ||' '|| Material FROM Muebles;
+--SELECT3
+SELECT 'EL NÚMERO DE TELÉFONO DE ' ||Nombre|| ' es ' ||Nº_telefono "NUMERO DE TELEFONO"
+    FROM Trabajadores;
+SELECT 'EL DNI DEL CLIENTE ' ||Nº_cliente|| ' es ' ||DNI
+    FROM Cliente;
+SELECT 'EL TIPO DE PRODUCTO CON ID ' ||id_producto|| ' es ' ||Tipo
+    FROM Productos;
