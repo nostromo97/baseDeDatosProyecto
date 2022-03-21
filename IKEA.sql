@@ -266,3 +266,15 @@ INSERT INTO Linea_de_pedido VALUES (3,3,'Pedido de escritorios de 12 piezas');
 INSERT INTO Pedidos VALUES (1,'02/02/2022',1,'76665434D');
 INSERT INTO Pedidos VALUES (2,'30/05/2022',2,'76665434D');
 INSERT INTO Pedidos VALUES (3,'16/04/2022',3,'77889767D');
+--
+--SELECT1
+SELECT Nombre "Nombre de los Trabajores", Tipo "Tipo de trabajador" 
+FROM Trabajadores;
+
+SELECT ID_Tienda "ID de la tienda", Superficie "Tamaño de la tienda"
+FROM Tienda;
+
+SELECT Nombre "Nombre del cliente", Dirección "Dirección del ciente"
+FROM Cliente;
+--SELECT2
+
