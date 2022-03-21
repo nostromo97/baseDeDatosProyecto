@@ -277,4 +277,5 @@ FROM Tienda;
 SELECT Nombre "Nombre del cliente", Dirección "Dirección del ciente"
 FROM Cliente;
 --SELECT2
-
+SELECT Tipo ||' '|| Descripción FROM Productos;
+SELECT id_pedido ||' '|| Entrega FROM Pedidos;
