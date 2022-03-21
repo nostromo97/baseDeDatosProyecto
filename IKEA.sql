@@ -276,10 +276,12 @@ FROM Tienda;
 
 SELECT Nombre "Nombre del cliente", Dirección "Dirección del ciente"
 FROM Cliente;
+
 --SELECT2
 SELECT Tipo ||' '|| Descripción FROM Productos;
 SELECT id_pedido ||' '|| Entrega FROM Pedidos;
 SELECT Tipo ||' '|| Material FROM Muebles;
+
 --SELECT3
 SELECT 'EL NÚMERO DE TELÉFONO DE ' ||Nombre|| ' es ' ||Nº_telefono "NUMERO DE TELEFONO"
     FROM Trabajadores;
@@ -287,3 +289,16 @@ SELECT 'EL DNI DEL CLIENTE ' ||Nº_cliente|| ' es ' ||DNI
     FROM Cliente;
 SELECT 'EL TIPO DE PRODUCTO CON ID ' ||id_producto|| ' es ' ||Tipo
     FROM Productos;
+    
+--SELECT4
+SELECT DISTINCT Nombre FROM Trabajadores;
+
+--SELECT5
+SELECT Sueldo * 1.2 FROM Trabajadores;
+--PARA INCREMENTAR UN 20% EL SALARIO DE LOS TRABAJADORES
+SELECT Sueldo - 200 FROM Trabajadores;
+--LE RESTA 200 EUROS A LOS TRABAJADORES PORQUE EL DIRECTOR ESTÁ PSICÓPATA
+SELECT Sueldo + 200 FROM Trabajadores;
+--LE SUBE 200 EUROS A LOS TRABAJADORES PORQUE HAN CAMBIADO DE DIRECTOR Y ES UN MÁQUINA
+
+--SELECT6
