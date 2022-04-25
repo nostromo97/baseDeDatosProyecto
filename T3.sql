@@ -333,7 +333,7 @@ SELECT p.cantidad, p.precio,d.id_departamento
     FROM productos p,departamento d
     WHERE p.id_producto=d.id_producto;
     
-SELECT lp.Descripci?n,p.Entrega
+SELECT lp.Descripción,p.Entrega
     FROM Linea_DE_PEDIDO lp,pedidos p
     WHERE lp.id_pedido=p.id_pedido;
     
@@ -350,3 +350,39 @@ SELECT d.id_departamento,b.herramientas,p.precio
 SELECT  c.nombre, p.id_pedido, li.descripción 
     FROM cliente c, pedidos p, linea_de_pedido li
     WHERE c.dni = p.cliente_dni AND li.id_pedido = p.id_pedido;
+
+--3
+
+SELECT trabajadores.Nombre, trabajadores.apellidos, tienda.ciudad
+    FROM trabajadores
+    JOIN tienda ON (trabajadores.tienda_id = tienda.id_tienda);
+    
+SELECT trabajadores.Nombre, trabajadores.apellidos, trabajadores.tipo, tienda.horario
+    FROM trabajadores
+    JOIN tienda ON (trabajadores.tienda_id = tienda.id_tienda);
+    
+SELECT productos.cantidad,productos.precio,departamento.id_departamento
+    FROM productos
+    JOIN departamento ON (productos.id_producto = departamento.id_producto);
+    
+SELECT linea_de_pedido.descripción, pedidos.entrega
+    FROM linea_de_pedido
+    JOIN pedidos ON(linea_de_pedido.id_pedido = pedidos.id_pedido);
+    
+SELECT cliente.nombre, cliente.apellidos, pedidos.entrega
+    FROM cliente
+    JOIN pedidos ON(cliente.dni=pedidos.CLIENTE_DNI);
+
+SELECT d.id_departamento,b.herramientas,p.precio
+    FROM departamento d JOIN bricolaje b
+    ON d.id_departamento = b.id_departamento
+    JOIN productos p
+    ON d.id_producto = p.id_producto;
+    
+SELECT c.nombre, p.id_pedido, li.descripción 
+    FROM cliente c JOIN pedidos p
+    ON c.dni = p.cliente_dni
+    JOIN linea_de_pedido li
+    ON li.id_pedido = p.id_pedido;
+
+--4
