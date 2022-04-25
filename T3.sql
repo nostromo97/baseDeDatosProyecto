@@ -386,3 +386,15 @@ SELECT c.nombre, p.id_pedido, li.descripción
     ON li.id_pedido = p.id_pedido;
 
 --4
+
+SELECT cliente.nombre, cliente.apellidos, pedidos.entrega
+    FROM cliente cliente
+    LEFT JOIN pedidos pedidos ON(cliente.dni=pedidos.CLIENTE_DNI);
+    
+SELECT trabajadores.Nombre, trabajadores.apellidos, tienda.ciudad
+    FROM trabajadores trabajadores
+    RIGHT JOIN tienda tienda ON (trabajadores.tienda_id = tienda.id_tienda);
+    
+SELECT li.descripción, pe.entrega
+    FROM linea_de_pedido li
+    FULL JOIN pedidos pe ON(li.id_pedido = pe.id_pedido);
