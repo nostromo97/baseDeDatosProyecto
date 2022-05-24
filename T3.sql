@@ -263,9 +263,9 @@ INSERT INTO Linea_de_pedido VALUES(1,1,'Pedido de focos para evento');
 INSERT INTO Linea_de_pedido VALUES (2,2,'Pedido de tijeras podadoras');
 INSERT INTO Linea_de_pedido VALUES (3,3,'Pedido de escritorios de 12 piezas');
 --PEDIDOS
-INSERT INTO Pedidos VALUES (1,'02/02/2022',1,'76665434D');
-INSERT INTO Pedidos VALUES (2,'30/05/2022',2,'76665434D');
-INSERT INTO Pedidos VALUES (3,'16/04/2022',3,'77889767D');
+INSERT INTO Pedidos VALUES (1,'02/02/2022',1,'12345678B');
+INSERT INTO Pedidos VALUES (2,'30/05/2022',2,'45678954S');
+INSERT INTO Pedidos VALUES (3,'16/04/2022',3,'99999999F');
 --COSULTAS
 --SELECT1
 SELECT Nombre "Nombre de los Trabajores", Tipo "Tipo de trabajador" 
@@ -320,6 +320,7 @@ SELECT 'La suma de la superficie de las tiendas es: '||SUM(superficie)"Suma de s
 
 --TERCER TRIMESTRE
 
+--Parte 1
 --1
 SELECT t.Nombre, t.apellidos, ti.ciudad
     FROM trabajadores t,tienda ti
@@ -398,3 +399,29 @@ SELECT trabajadores.Nombre, trabajadores.apellidos, tienda.ciudad
 SELECT li.descripción, pe.entrega
     FROM linea_de_pedido li
     FULL JOIN pedidos pe ON(li.id_pedido = pe.id_pedido);
+    
+--Parte2
+--1
+SELECT Nombre, MAX(sueldo)
+    FROM trabajadores
+    WHERE sueldo>1000
+    GROUP BY Nombre;    
+--2
+
+SELECT trabajadores_id,nombre, MAX(sueldo)
+    FROM trabajadores
+    GROUP BY trabajadores_id,nombre
+     HAVING MAX(sueldo) > 1000;
+--3
+    SELECT DNI,nombre,apellidos,MAX(sueldo)
+        FROM trabajadores
+        GROUP BY DNI,nombre,apellidos
+        ORDER by DNI;
+        
+--4
+    SELECT p.id_pedido,c.DNI
+    FROM cliente c JOIN pedidos p
+    ON (c.DNI=p.cliente_DNI)
+    GROUP BY p.id_pedido,c.dni
+    ORDER by p.id_pedido;
+    
