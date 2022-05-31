@@ -425,3 +425,24 @@ SELECT trabajadores_id,nombre, MAX(sueldo)
     GROUP BY p.id_pedido,c.dni
     ORDER by p.id_pedido;
     
+
+--Parte3
+--1 Subconsultas
+SELECT nombre,sueldo
+  FROM trabajadores                                                                
+  WHERE tipo = 'Carpintero'
+    AND tienda_id IN
+       (SELECT DISTINCT tienda_id
+        FROM trabajadores                                                                 
+        WHERE tipo = 'Recepcionista'
+          AND sueldo > 2000)
+          
+SELECT id_tienda,direccion
+  FROM tienda                                                              
+  WHERE ciudad = 'Madrid'
+    AND id_tienda IN
+       (SELECT DISTINCT id_tienda
+        FROM tienda                                                                 
+        WHERE ciudad = 'Malaga'
+          AND superficie > 700)
+    
